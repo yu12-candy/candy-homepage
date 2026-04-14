@@ -94,7 +94,7 @@ body {
     z-index: 2; /* 前面に表示 */
 }
 .header-left .CandyLogo { /* .header-left の中にある .CandyLogo だけに適用 */
-    height: 200px; /* ロゴ画像の横幅 */
+    height: 180px; /* ロゴ画像の横幅 */
     width: auto; /* 横幅に合わせて自動調整 */
 }
  
@@ -109,14 +109,14 @@ body {
     top: 0; /* 画面上部からの距離 */
     right: 0; /* 右寄せ */
 
-    padding: 10px 25px;
+    padding: 10px 30px;
 }
 .header-right .phone {
     display: flex; /* 配置を指定できるようにする */
     align-items: center; /* 縦方向の中央に揃える */
 }
 .header-right .phone img {
-    height: 55px;
+    height: 40px;
     width: auto;
 }
 
@@ -131,7 +131,7 @@ body {
     transform: translateX(-50%); /* 中央揃え */
 
     bottom: 0;
-    padding-bottom: 15px;
+    padding-bottom: 40px;
 
     z-index: 2; /* 前面に表示 */
 }
