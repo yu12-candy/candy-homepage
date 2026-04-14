@@ -1,0 +1,379 @@
+/*** 全体のbody ***/
+body {
+    text-align: center;
+    background-color: #fffcd8; /* 背景色 */
+    font-family: メイリオ, '游ゴシック UI', sans-serif;
+    letter-spacing: 0.05em; /* 文字の間隔 */
+    margin: 0; /* 周りの白い部分を削除*/
+}
+
+/*** schedule.html ***/
+.body-schedule {
+    padding: 0 50px 40px 50px;
+}
+.body-schedule h1 {
+    font-size: 28px;
+    padding: 30px 0 0 0;
+}
+.scheduletable img {
+    width: 800px; /* 横 */
+    height: auto;
+}
+
+/*** guide.html ***/
+.body-guide {
+    padding: 0 50px 40px 50px;
+}
+.body-guide h1 {
+    font-size: 28px;
+    padding: 30px 0 0 0;
+}
+
+ /*** about.html ***/
+ .body-about {
+    padding: 0 50px 40px 50px;
+}
+ .body-about h1 {
+    font-size: 28px;
+    padding: 30px 0 0 0;
+}
+
+/*** ヘッダー ***/
+.header {
+    /* position → 絶対位置や相対位置 */
+    position: relative; /* 親、相対位置 */
+
+    /* Flexbox → 横並びや中央揃え */
+    display: flex; /* 横並び */
+    justify-content: space-between; /* 両端に寄せて均等に左右にわける　*/
+    align-items: center; /* 縦方向の中央に揃える */
+    
+    background-color: #fffcd8; /* 背景色 */
+
+    height: 200px;
+    padding: 10px 0px; /* ヘッダーの周りの空白、上下左右 */
+
+    z-index: 10; /* ヘッダー全体を前面に表示 */
+}
+
+/* フリル */
+.header-top {
+    position: absolute; /* 子、絶対位置 */
+    display: flex; /* 配置を指定できるようにする */
+    justify-content: center; /* 中の要素を中央に配置する */
+    align-items: flex-start; /* 縦方向の中央に揃える */
+
+    top: 0;
+
+    width: 100%; /* 横幅 */
+    height: 100px; /* 画像の高さ */
+    
+    /* 背景に同じ画像を横方向に繰り返す */
+    background-image: url('images/frill.PNG');
+    background-repeat: repeat-x; /* 横方向に繰り返し表示 */
+    background-position: center; /* 開始位置を中央に設定 */
+    background-size: auto 100px; /* 画像の幅を指定 */
+
+    overflow: hidden; /* はみ出した背景画像をカット */
+}
+.header-top .frill {
+    width: auto; /* .header-topと揃える */
+    height: 100px;
+}
+ 
+/* 左側のロゴ */
+.header-left {
+    position: absolute; /* 子、絶対位置 */
+    display: flex; /* 配置を指定できるようにする */
+    justify-content: flex-start; /* 中の要素を左寄せに配置する */
+    align-items: center; /* 縦方向の中央に揃える */
+
+    left: 20%;
+    transform: translateX(-50%);
+
+    z-index: 2; /* 前面に表示 */
+}
+.header-left .CandyLogo { /* .header-left の中にある .CandyLogo だけに適用 */
+    height: 200px; /* ロゴ画像の横幅 */
+    width: auto; /* 横幅に合わせて自動調整 */
+}
+ 
+/* 右側の話番号 */
+.header-right {
+    position: absolute; /* 子、絶対位置 */
+    display: flex; /* 横並び */
+    justify-content: flex-end; /*中の要素を右寄せに配置する */
+    align-items: center; /* 縦方向の上寄せに配置する */
+
+    /* 親に対しての位置を指定する */
+    top: 0; /* 画面上部からの距離 */
+    right: 0; /* 右寄せ */
+
+    padding: 10px 25px;
+}
+.header-right .phone {
+    display: flex; /* 配置を指定できるようにする */
+    align-items: center; /* 縦方向の中央に揃える */
+}
+.header-right .phone img {
+    height: 55px;
+    width: auto;
+}
+
+/* 中央のナビゲーション */
+.header-center {
+    position: absolute; /* 子、絶対位置 */
+    display: flex; /* 横並び */
+    justify-content: center; /* 中の要素を中央に配置する */
+    align-items: flex-end; /* 縦方向の下寄せに配置する */
+
+    left: 60%;
+    transform: translateX(-50%); /* 中央揃え */
+
+    bottom: 0;
+    padding-bottom: 15px;
+
+    z-index: 2; /* 前面に表示 */
+}
+.header-center .nav-menu {
+    display: flex; /* 配置を指定できるようにする */
+    gap: 60px; /* ナビ同士の間隔 */
+}
+.header-center .nav-item {
+    display: flex; /* 配置を指定できるようにする */
+    flex-direction: column; /* 縦並び */
+    align-items: center; /* 縦並びの時は横方向の中央揃え */
+
+    position: relative; /* 水玉縦線の基準にするための親要素 */
+}
+.header-center .nav-item img {
+    width: 80px; /* 画像サイズ */
+    height: auto;
+    margin-bottom: 0px; /* 画像とテキストの間隔 */
+}
+.header-center .nav-item a {
+    text-align: center; /* テキストの中央揃え */
+    text-decoration: none; /* リンクの下線を削除 */
+
+    display: inline-block; /* 改行のため */
+    width: 200px;
+    line-height: 1.0; /* 行間を調整 */
+
+    color: #000;
+    font-size: 16px;
+}
+/* 水玉風の縦点線を右側に追加（最後の項目以外） */
+.nav-item:not(:last-child)::after {
+    position: absolute; /* 子、絶対位置 */
+    content: ""; /* 擬似要素の内容（空白） */
+    top: 30px; /* 上端を親要素の上から10px下げた位置に配置 */
+    right: -30px; /* gapの半分 */
+    width: 0; /* 横幅は不要 */
+    height: 60px; /* 縦線の長さ */
+    border-right: 8px dotted #aaa; /* 太さ、スタイル、色 */
+    opacity: 1;
+}
+
+/* 雲 */
+.kumo-left,
+.kumo-right,
+.lion_2,
+.bear {
+    position: absolute; /* 子、絶対位置 */
+    z-index: 0; /* 背面に表示 */
+    pointer-events: none; /* 雲にマウスイベントを当てない */
+}
+.kumo-left {
+    left: -15px;
+    bottom: -200px;
+}
+.kumo-right {
+    right: -25px;
+    bottom: -130px;
+}
+.kumo-left img,
+.kumo-right img {
+    height: 130px; /* 画像サイズ */
+    width: auto;
+}
+.lion_2 {
+    left: 35px;
+    bottom: -130px;
+}
+.lion_2 img {
+    height: 130px; /* 画像サイズ */
+    width: auto;
+}
+.bear {
+    right: 30px;
+    bottom: -70px;
+}
+.bear img {
+    height: 130px; /* 画像サイズ */
+    width: auto;
+}
+
+/*** フッター ***/
+.footer {
+    /* position → 絶対位置や相対位置 */
+    position: relative; /* 親、相対位置 */
+
+    /* Flexbox → 横並びや中央揃え */
+    display: flex; /* 横並び */
+    justify-content: space-between; /* 両端に寄せて均等に左右にわける　*/
+    align-items: center; /* 縦方向の中央に揃える */
+    
+    background-color: #d3f2b5; /* 背景色 */
+
+    height: 130px;
+    padding: 10px 20px; /* フッターの周りの空白、上下左右 */
+}
+
+/* 中央のロゴ */
+.footer-center {
+    position: absolute; /* 子、絶対位置 */
+    display: flex; /* 配置を指定できるようにする */
+    justify-content: center; /* 中の要素を左寄せに配置する */
+    align-items: center; /* 縦方向の中央に揃える */
+
+    left: 50%; /* 左側から中央へ移動 */
+    transform: translateX(-50%); /* 要素の幅の半分だけ左にずらす */
+}
+.footer-center .CandyLogo {
+    height: 130px; /* ロゴ画像の縦幅 */
+    width: auto; /* 横幅に合わせて自動調整 */
+}
+
+/* 左側のコンタクトと電話番号 */
+.footer-left {
+    position: absolute; /* 子、絶対位置 */
+    display: flex; /* 配置を指定できるようにする */
+    justify-content: center; /* 中の要素を中央に配置する */
+    align-items: center; /* 縦方向の中央に揃える */
+    flex-direction: column; /* 縦並び */
+
+    left: 27%; /* 左側から移動 */
+    transform: translateX(-50%); /* 要素の幅の左にずらす */
+    
+    font-size: 12px;
+    padding: 10px 20px;
+
+    background-color: #fff6cc; /* 好きな色に変更可能 */
+    border-radius: 50px; /* 角を丸くする */
+}
+.footer-left .name {
+    padding-bottom: 5px;
+    font-weight: bold;  /* 太字 */
+}
+.footer-left p {
+    margin: 0;
+}
+.footer-left .contact {
+    font-size: 14px;
+}
+.footer-left .phone {
+    display: flex; /* 配置を指定できるようにする */
+    align-items: center; /* 縦方向の中央に揃える */
+
+    gap: 4px; /* 画像とテキストの間の隙間 */
+    font-size: 25px;
+}
+.footer-left .phone img {
+    width: 40px;
+    height: auto;
+}
+.footer-left .phone a {
+    font-weight: bold;  /* 太字 */
+    letter-spacing: 4px; /* 文字間隔 */
+    text-decoration: none; /* 下線をなくす */
+    color: #ffffff;
+    
+    text-shadow:
+    -2px -2px 0 #f29154,
+    2px -2px 0 #f29154,
+    -2px  2px 0 #f29154,
+    2px  2px 0 #f29154,
+    0px -2px 0 #f29154,
+    2px  0px 0 #f29154,
+    0px  2px 0 #f29154,
+    -2px  0px 0 #f29154 /* 四方向に影をつけて縁取り風にする */
+}
+
+/* 右側のナビゲーション */
+.footer-right {
+    position: absolute; /* 子、絶対位置 */
+    display: flex; /* 配置を指定できるようにする */
+    align-items: center; /* 縦並びの時は左寄せに配置する */
+    flex-direction: column; /* 縦並び（aに作用） */
+
+    left: 70%; /* 左側から移動 */
+    transform: translateX(-50%); /* 要素の幅の左にずらす */
+    
+    padding: 10px 20px;
+
+    background-color: #fff6cc;  /* 好きな色に変更可能 */
+    border-radius: 45px;        /* 角を丸くする */
+}
+.footer-right .nav-menu a {
+    display: block; /* 確実に改行する */
+    text-align: center; /* 左寄せ */
+    margin: 3px 0;
+    text-decoration: none; /* リンクの下線を削除 */
+    color: #000;
+    font-size: 14px;
+}
+
+/* 画像 */
+.tree,
+.flower1,
+.flower2,
+.flower3,
+.rainbow {
+    position: absolute; /* 子、絶対位置 */
+    z-index: 0; /* 背面に表示 */
+    pointer-events: none; /* マウスイベントを当てない */
+}
+.tree {
+    left: 20px;
+    top: -35px;
+}
+.tree img {
+    height: 90px;
+    width: auto;
+}
+
+.flower1 {
+    left: 70px;
+    bottom: 10px;
+}
+.flower1 img {
+    height: 70px;
+    width: auto;
+}
+
+.flower2 {
+    right: 150px;
+    top: 20px;
+}
+.flower2 img {
+    height: 70px;
+    width: auto;
+}
+
+.flower3 {
+    right: 20px;
+    bottom: 10px;
+}
+.flower3 img {
+    height: 50px;
+    width: auto;
+}
+
+.rainbow {
+    right: 0;
+    top: -200px;
+}
+.rainbow img {
+    height: 200px;
+    width: auto;
+}
