@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<title>放課後等デイサービスきゃんでぃーのホームページ</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="body-about">
+
+        <h1>住所</h1>
+        <p>〒830-0233<br>北九州市小倉南区朽網西5丁目21-10</p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3315.212889928998!2d130.95197899999994!3d33.80681879999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543c1005574193d%3A0xe5fa456bbf95083a!2z5pS-6Kqy5b6M562J44OH44Kk44K144O844OT44K544GN44KD44KT44Gn44GD44O8!5e0!3m2!1sja!2sjp!4v1746423292969!5m2!1sja!2sjp"
+            width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <h1>お問い合わせ</h1>
+        <p>093-383-9901</p>
+
+        <h1>評価表</h1>
+        <p><a href="documents/SupportProgram_1.pdf" target="_blank">支援プログラム</a></p>
+        <p><a href="documents/Self-assessment_1.pdf" target="_blank">自己評価結果</a></p>
+
+    </div>
+
+    <div id="footer"></div>
+
+    <!-- ヘッダーとフッター -->
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("header").innerHTML = data);
+
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+
+</body>
+
+</html>

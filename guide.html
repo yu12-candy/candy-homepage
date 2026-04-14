@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<title>放課後等デイサービスきゃんでぃーのホームページ</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="body-guide">
+
+        <h1>対象年齢</h1>
+        <p>小学1年生~高校3年生が対象になります。</p>
+
+        <h1>開所日</h1>
+        <p>●学校のある日<br>
+            下校時間~17:30<br>
+            ●学校のない日（土曜日・祝日・長期休み）<br>
+            9:30~16:30<br>
+            ●日曜日お休み</p>
+        
+        <h1>支援内容</h1>
+        <p>・学校の宿題をする時は、落ち着いた雰囲気作りを大切にしながら取り組んでいます<br>
+            ・好きなこと興味のあることを見つけて楽しく取り組みます<br>
+            ・簡単な料理を体験します<br>
+            （ご飯を炊く・おかずを炒める・お菓子を作るなど）<br>
+            ・お店でのお金の計算や支払いをして買い物ができるように取り組んでいきます<br>
+            ・好きなことや得意なことを活かして作品を作り、フリーマーケットに出店して社会経験を体験します<br>
+            (例：アクセサリー・マグネット・コースター・小物類)
+        </p>
+        <p>★自転車に乗れるように練習します（要望に応じて）<br>
+            ★パソコン操作ができるように取り組みます
+        </p>
+        <p>・カラオケ・映画・公園・外食などリフレッシュにも取り組んでいきます（無料サービスです）<br>
+            ・一般就労・A型事業所・B型事業所について、一緒に調べたり見学に行ったりしながら就職に向けて取り組んでいきます
+        </p>
+        <p>●利用者様・保護者様と各関係機関（きゃんでぃー・学校・相談支援員など）と連携を取りながら、<br>
+            安心して過ごすことや自立に向けてできることを支援していきます</p>
+    </div>
+
+    <div id="footer"></div>
+
+    <!-- ヘッダーとフッター -->
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("header").innerHTML = data);
+
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+
+</body>
+
+</html>
